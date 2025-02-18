@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-contract MultiSigWallet {
+contract MultiSig {
     // events
     event Deposit(address indexed sender, uint value, uint balance);
     event Submission(uint indexed txnId, address indexed sender, address indexed to, uint value, bytes data);
@@ -20,7 +20,7 @@ contract MultiSigWallet {
 	address[] public owners;
 	uint public required;
 	uint public txnCount;
-
+  uint public numOwners;
 	struct Transaction {
 		address to;
 		uint value;
@@ -89,12 +89,13 @@ contract MultiSigWallet {
 		for (uint i = 0; i < _owners.length; i++) {
 			address owner = _owners[i];
 
-			require(!isOwner[owner], "Owner not unique");
-			require(owner != address(0), "Invalid owner");
+			require(!isOwner[owner], "Owner already exists");
+			require(owner != address(0), "Address is null");
 			isOwner[owner] = true;
 		}
 		owners = _owners;
 		required = _required;
+    numOwners = _owners.length;
 	}
 
 	// @dev Allows an owner to submit a transaction to the wallet

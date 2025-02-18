@@ -1,0 +1,41 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/Users/killiangodfrey/Documents/Dev/projects/multisigwallet/hardhat/contracts/MultiSig.sol": {
+      "lastModificationDate": 1739853150828,
+      "contentHash": "767b4b8cb1339fc9dd5f1c3f642ff52e",
+      "sourceName": "contracts/MultiSig.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "MultiSig"
+      ]
+    }
+  }
+}
